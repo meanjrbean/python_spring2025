@@ -1,0 +1,69 @@
+STARTING OUT WITH PYTHON
+CHAPTER'S:
+• CHAPTER 9 - DICTIONARIES AND SETS
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+LAB
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+File Analysis
+
+Write a program that reads the contents of the two text files provided and compares them in the following ways:
+    • It should display a list of all the unique words contained in both files.
+    • It should display a list of the words that appear in both files.
+    • It should display a list of the words that appear in the first file but not the second.
+    • It should display a list of the words that appear in the second file but not the first.
+    • It should display a list of the words that appear in either the first or second file, but not both.
+Use SET operations to perform these analyses.
+
+NOTE: first_file.txt & second_file.txt are the files used.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ASSIGNMENT
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Exercise
+
+Write a program that:
+    1. Creates a dictionary containing the U.S. states as keys, and their capitals as values.
+        • Use the Internet to get a list of the states and their capitals.
+        • As an alternative to the U.S. states, the program can use the names of countries and their capitals.
+    2. The program should randomly quiz the user by displaying the name of a state and asking the user to enter that
+    state’s capital.
+    3. The program should compare the user's input to the random state and keep a running count of the number of correct
+    and incorrect responses.
+    4. The code should loop continually until the user decides to quit.
+
+To randomly pick a state from the dictionary you should use the "random.choice()" method found in the random module.
+You will need to add the import random statement to the top of you code.
+
+The choice(some-list) method takes a "list" as a parameter, and then returns a random item from the provided list.
+NOTE: If you attempt to use the "keys()" method of a dictionary object to return all the keys for the random.choice()
+function you will get an error. The returned object for the .keys() method is actually a 'view' instead of list.  In
+Python 3+ you can use the list() function instead, which will extract the dictionary keys as a list.
+    • EXAMPLE: current_country = random.choice(list(countries))
+
+Programming Steps (Pseudo-Code) - Follow these steps to accomplish the finished project:
+    • Initialize the dictionary and also two integer variables to act as accumulators for correct and incorrect
+        responses to the quiz.
+    • Create a loop that will continue until the user gives the proper command to end the quiz
+    • Inside the loop randomly pick a state from the dictionary and store it as the current state for the quiz
+    • Ask the user to provide the correct capital for the state.
+        ○ Don't forget to let the user know what input to provide in order to end the quiz also.
+        ○ Use string functions to make capitalization irrelevant.
+    • Use a decision block based on the user input to either quit, increment the variable correct responses, or
+        increment a count for incorrect responses
+    • After the loop ends, display the number of correct and incorrect responses.
+
+
+SAMPLE INPUT/OUTPUT (your output should match this):
+
+What is the capital of Georgia? (or enter 0 to quit): Atlanta
+That is correct.
+
+What is the capital of Washington? (or enter 0 to quit): Seattle
+That is incorrect.
+
+What is the capital of Ohio? (or enter 0 to quit): Columbus
+That is correct.
+
+What is the capital of Minnesota? (or enter 0 to quit): 0
+You had 2 correct responses and 1 incorrect responses.

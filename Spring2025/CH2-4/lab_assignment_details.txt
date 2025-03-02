@@ -1,0 +1,117 @@
+STARTING OUT WITH PYTHON
+CHAPTER'S:
+• CHAPTER 2 - INPUT, PROCESSING, AND OUTPUT
+• CHAPTER 3 - DECISION STRUCTURES AND BOOLEAN LOGIC
+• CHAPTER 4 - REPETITION STRUCTURES
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+LAB
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Specifications:
+
+This assignment will help students practice fundamental Python concepts, including input handling, data validation,
+loops, functions, and formatted console output. Students will write a program that takes a starting number and an
+ending number from the user and displays a table with the number, its square, and its cube.
+
+Your task is to create a Python program that:
+    1. Prompts the user to enter a starting number and an ending number.
+    2. Validates the user’s input to ensure the values are valid integers and that the starting number is less than
+        or equal to the ending number.
+    3. Calculates the square and cube of each number within the range.
+    4. Displays the results in a formatted table.
+    5. Allows the user to repeat the process until they choose to exit.
+
+Requirements:
+1. User Input
+    • Ask the user to enter a starting number and a stop number.
+    • Convert the inputs to integers.
+    • Handle invalid input gracefully.
+2. Validation Rules
+    • If the user enters a non-numeric value, display an error and prompt again.
+    • If the starting number is greater than the ending number, display an error and prompt again.
+3. Output Format
+    • The program should print a table with three columns:
+        ○ Number (the number itself)
+        ○ Squared (the number squared)
+        ○ Cubed (the number cubed)
+    • The output should be aligned properly for readability.
+4. Looping
+    • After displaying the table, ask the user if they want to try again.
+    • The program should continue until the user chooses to exit.
+
+SAMPLE INPUT/OUTPUT (your output should match this):
+
+Table of Powers
+Enter a starting number: 2
+Enter a stop number: 5
+
+Number   Squared  Cubed
+------------------------
+2        4        8
+3        9        27
+4        16       64
+5        25       125
+
+Would you like to try again? (Y/N): y
+
+Enter a starting number: 5
+Enter a stop number: 2
+Invalid input: starting number cannot be greater than the stop number.
+
+Enter a starting number: hello
+Invalid input: cannot convert to integer.
+
+Enter a starting number: -3
+Enter a stop number: 3
+
+Number   Squared  Cubed
+------------------------
+-3       9        -27
+-2       4        -8
+-1       1        -1
+0        0        0
+1        1        1
+2        4        8
+3        9        27
+
+Would you like to try again? (Y/N): n
+Goodbye!
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ASSIGNMENT
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Specifications:
+You will create a Python program that calculates shipping costs based on predefined price ranges.
+
+Order Amount                        Shipping Cost
+-------------------------------------------------
+< $30.00                            $5.95
+Between $30.00 and $49.99           $7.95
+Between $50.00 and $74.99           $9.95
+> $75.00                            FREE
+
+SAMPLE INPUT/OUTPUT (your output should match this):
+
+SHIPPING COST CALCULATOR
+
+Order Amount                        Shipping Cost
+-------------------------------------------------
+< $30.00                            $5.95
+Between $30.00 and $49.99           $7.95
+Between $50.00 and $74.99           $9.95
+> $75.00                            FREE
+
+Enter cost of items ordered: 45.00
+Shipping Cost = $7.95
+Total Cost = $52.95
+
+Would you like to try again? Y/N: y
+
+Enter cost of items ordered: 100.00
+Shipping Cost = FREE
+Total Cost = $100.00
+
+Would you like to try again? Y/N: n
+Goodbye!

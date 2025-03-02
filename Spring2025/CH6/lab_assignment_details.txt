@@ -1,0 +1,173 @@
+STARTING OUT WITH PYTHON
+CHAPTER'S:
+• CHAPTER 5 - FILES AND EXCEPTIONS
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+LAB
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Perform the following steps in the file you created above (lastname_firstname_lab3.py):
+
+1. Open the file provided file for reading.
+2. Create a loop to move through each line of the file contents in order to determine if the current number is even or
+    odd. Based on the findings, build two string variables contain a list of even and odd numbers. Add a "\n" to the
+    end of each number.
+3. Close the file after the loop ends.
+4. Open two new files for writing and write the odd numbers to one and the even numbers to the other
+
+HINT: Use the modulo operator % with a 2 to determine if the current number is even or odd.
+
+Additional Instructions:
+• All of your code should reside inside a TRY/Except code block.  Check for a "FileNotFoundError" error.
+• Do not shortcut the steps.  Do not write the numbers to the two new odd/even files inside the same loop where you're
+    reading from the provided file.  Write your code to follow the sequence of steps "as listed" in the instructions.
+• There's no need to loop through the two variables.  You can just write the variable content to their respective files
+    in a single line.  Don't forget to close the files afterward.
+
+Sample input / output: Your program should match the sample output in mod3numlist.txt
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ASSIGNMENT
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Exercise
+In this exercise, you will create a menu-driven application to manage contacts that are stored in a text file.
+The file named "contacts.txt" is provided to download.
+
+Specifications:
+• You will need to create separate functions to:
+    ○ House the main() code
+    ○ Display an option menu as shown in the example output below
+    ○ Read and print the contacts stored in the text file
+    ○ Add a contact to the file
+    ○ Delete a contact from the file
+
+• The display_menu() function should:
+    ○ Print a list of choices for the program.
+
+• The main() function should:
+    ○ Prompt the user to input the name of the contact text file and store it in a variable.  Use this variable
+        containing the file name in your "open()" statement. Take note that this code for opening the file is just to
+        validate that the filename typed by the user actually exists before going on with the rest of the program.
+        You will not actually use the file inside the "main()" function. To check the file's existence you'll need to
+        use a "try/except" statement block when you attempt to open the file. Utilize the "FileNotFoundError" type in
+        your except section and be sure to print a message if this occurs. Place this entire section of the code
+        (input prompt, try/except, etc.) inside a "While" loop so that if an error occurs your code repeatedly ask the
+        user for a  new filename  input. When the file opens successfully in the "try" portion then you should be sure
+        to close the file and then "break" the loop.
+    ○ Call the function to display the menu.
+    ○ Inside a second While loop you will use an input for the user to input a menu choice.  Use an
+        "If/elif/elif/elif/else" code block to determine which function to call based on the user's input.  If they
+        enter 'exit' then break the while loop and say "Good-Bye".  The "else" should contain a warning that they
+        didn't enter one of the choices correctly.
+        NOTE: you'll need to pass the file name variable as parameter to the view, add,
+        and delete functions when you call them
+
+NOTE: In the functions below you must have a parameter to receive the file name value.  When you call these functions
+from the main() you'll need to pass in that file name variable from step #1 above as an argument.
+
+• The view_contacts(contact_file) function should receive the file name as a parameter.
+    ○ Open the file for reading
+    ○ Loop through the contents of the file printing each line to the console.
+    ○ Initialize a counter variable and increment it inside the loop.  Concatenate the number and a period to the
+        beginning of each line.
+    ○ Close the file, and call the function to display the menu again.  NOTE: use a blank print() to create spacing as
+        needed.
+
+• The add_contacts(contact_file) function should receive the file name as a parameter.
+    ○ Prompt the user for name, email, and phone number and store the inputs into variables
+    ○ Concatenate the three items separated by commas with a "\n" newline character at the end
+    ○ Open the file for appending and write the new line to the file
+    ○ Close the file, and call the function to display the menu again.  NOTE: use a blank print() to create spacing
+    as needed.
+    ○ Print a success message, a space and the menu again.
+
+• The delete_contacts(contact_file) function should receive the file name as a parameter.
+    ○ Call the view() function to display the lines again so the user can be reminded of the numbers associated with
+        each line.
+    ○ Prompt the user to enter the number of the item they want to delete - store that number in a variable.
+    ○ Open the file for reading and Loop through the contents of the file.  Make sure to initialize a counter variable ,
+        just like in the view() function, and increment it inside the loop so that it corresponds to the line items as
+        viewed previously.
+    ○ Inside the loop, use an "if" statement to compare the counter with the user's choice for deletion.  Build a new
+        string variable from all of the line items that DON'T match the user's input (e.g. x = x + 'new item').
+    ○ After the loop, close the file
+    ○ Open the file again, but this time for writing and write the newly created string variable to the file.
+    ○ Print a success message, a space and the menu again.
+
+SAMPLE INPUT/OUTPUT (your output should match this):
+Contact Manager
+
+Enter Contacts File Name: contacts.txt
+
+COMMAND MENU
+view - View a contact
+add - Add a contact
+del - Delete a contact
+exit - Exit program
+
+Command: view
+1. Guido van Rossum, guido@python.org, 123-456-7890
+2. Eric Idle, eric@ericidle.com, 111-222-3333
+3. Roger Whitman, rwhitman@coding.com, 987-123-4567
+4. Suzy Seashell,seashore@sell.com,444-444-4444
+
+COMMAND MENU
+view - View a contact
+add - Add a contact
+del - Delete a contact
+exit - Exit program
+
+Command: add
+Name: Tilly May
+Email: tilly@help.com
+Phone: 321-654-0987
+Tilly May was added.
+
+COMMAND MENU
+view - View a contact
+add - Add a contact
+del - Delete a contact
+exit - Exit program
+
+Command: view
+1. Guido van Rossum, guido@python.org, 123-456-7890
+2. Eric Idle, eric@ericidle.com, 111-222-3333
+3. Roger Whitman, rwhitman@coding.com, 987-123-4567
+4. Suzy Seashell,seashore@sell.com,444-444-4444
+5. Tilly May,tilly@help.com,321-654-0987
+
+COMMAND MENU
+view - View a contact
+add - Add a contact
+del - Delete a contact
+exit - Exit program
+
+Command: del
+1. Guido van Rossum, guido@python.org, 123-456-7890
+2. Eric Idle, eric@ericidle.com, 111-222-3333
+3. Roger Whitman, rwhitman@coding.com, 987-123-4567
+4. Suzy Seashell,seashore@sell.com,444-444-4444
+5. Tilly,tilly@help.com,321654-0987
+Enter the number of the contact to delete: 5
+5 was removed
+
+COMMAND MENU
+view - View a contact
+add - Add a contact
+del - Delete a contact
+exit - Exit program
+
+Command: view
+1. Guido van Rossum, guido@python.org, 123-456-7890
+2. Eric Idle, eric@ericidle.com, 111-222-3333
+3. Roger Whitman, rwhitman@coding.com, 987-123-4567
+4. Suzy Seashell,seashore@sell.com,444-444-4444
+
+COMMAND MENU
+view - View a contact
+add - Add a contact
+del - Delete a contact
+exit - Exit program
+
+Command: exit
+Bye!

@@ -1,0 +1,146 @@
+STARTING OUT WITH PYTHON
+CHAPTER'S:
+• CHAPTER 7 - LISTS AND TUPLES
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+LAB
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Create a program to calculate statistics for quarterly sales
+
+Specifications:
+
+1. Create a function to display the "Header/Greeting".
+2. Create a function named "get_quarterly_sales()" to ask the user to input a numeric value for each of the 4 quarters
+    sales totals.   Store the information in a List.  The function should return the list.
+3. Create a function named "process_sales()" to process the sales data and display information about the sales figures.
+    The function should take a single list as a parameter and then do the necessary calculations to be able to print
+    the "Total, Average, Maximum, and Minimum values" as shown in the sample output below
+4. Create a Main function to call these functions in order.  Note you'll need to store the returned value from the
+    get_quarterly_sales() function in order to pass it as a parameter to the process_sales() function.
+
+Sample input / output:
+
+The Quarterly Sales program
+
+Enter sales for Q1: 25000
+Enter sales for Q2: 37000
+Enter sales for Q3: 52000
+Enter sales for Q4: 48000
+
+Total: $162000.0
+Average Quarter: $ 40500.0
+Lowest Quarter: $ 25000.0
+Highest Quarter: $ 52000.0
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ASSIGNMENT
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Exercise
+
+In this assignment you will write a program that will read a file containing nutrition information from the five major
+food groups (e.g. fruit, vegetable, dairy, proteins, and grains) .  Each row of data in the file contains four bits
+of information.  You will store the data from the file in a multi-dimensional list (a list of lists).  You will present
+the users with a menu so that they can choose one of the five food groups to view.  Once the user enters a type, the
+code will loop through the main data list in order to build separate smaller multi-dimensioned lists containing only
+information for each particular food group.   The code will then write out to the screen in a nicely formatted columned
+output the information requested.
+
+SPECIFICATIONS - Follow the steps below to write the program
+
+1. Write a function named "read_data()" that builds a list of lists from the provided data file (nutrition_data.csv).
+In this function you'll need to:
+    • Create an empty list variable that will contain the list of lists.
+    • Create a loop that reads each line from the data file.  Each line in the file contains a comma separated string
+        of four items.  As you read the line, also strip the "\n" from the end of the line and store it temporarily in a
+        variable.
+    • Use a Split() function to split the temporary line variable based on a comma.  This will create a list of those
+        items.
+    • Append this new small list to the main list variable created in the first bullet point
+    • Close the file
+    • Return the new main list
+
+2. Write a function named "create_separate_list()" that takes two parameter.
+The first parameter will receive the main list and the second parameter will hold the value of the user's menu choice.
+This function will build 5 separate lists containing the nutrition information separated by food group.
+It will only return the appropriate list based on the user's selection.
+    • Create five empty lists.  Name the new lists appropriately to match the food groups.
+    • Use a "For In" loop to iterate through the main list variable that was passed into the function in the first
+        parameter.
+    • Since each line inside the main list variable contains four items of information, and knowing that the first item
+        is the name of the food group, we can use a "if/elif" decision block with a decision path for each food group to
+        append the current row to the correct food group list.   This will separate the items into their very own list.
+
+        NOTE: you can look at just the first item in a row by using a zero index.  If we have "for x in main_list" then
+        x[0] contains the name of the food group for that row.
+    • After the "For In" loop you then need a second "if/elif" block to test which food group the user chose.  Remember,
+        this is in the second parameter of the function.  Based on the results you should return the correct food group
+        list.
+
+3. Write a function named "display_menu()" that prints the menu to the screen.
+
+4. Write a function named "main()" that contains the code loop for user interaction.
+• Call the read_data() function and store the results in a list variable.
+• Use a "while True:" loop.
+• Call the display_menu() function.
+• Prompt the user for a menu choice (1,2,3,etc.).
+• Use an "if/else" to validate that the user has enter a number that is 1 - 5. If not print a warning message
+• Inside the "if" statement, call the create_separate_list() function and pass in two parameter values; the main list
+    variable, and the user's menu choice. Store the returned list in a variable.
+• Sort the list variable that holds the returned list.
+• Print the list items in a nicely formatted output using fixed width columns. You'll use a "for/in" loop to move
+    through the list.
+• Prompt the user to decide if they want to continue or not. End the loop if the choice is "n".
+
+Sample input/output:
+Nutrition by Food Group
+1. Dairy
+2. Meat
+3. Vegetables
+4. Fruit
+5. Grains
+Enter your food group choice: (1-5): 1
+Name                                Amount          Calories
+----------------------------------------------------------------------
+Buttermilk                          1 cup           127
+Cheese - Cheddar                    1/2 cup         226
+Cheese - Swiss                      1 oz.           105
+Cheese - cottage                    1 cup           240
+Cream cheese                        1 oz.           105
+Goats milk                          1 cup           165
+Heavy whipping                      1/2 cup         430
+Ice cream                           1 cup           300
+Milk - Skim                         1 qt.           360
+Milk - whole                        1 qt.           660
+half-and-half                       1/2 cup         170
+
+Would you like to perform another conversion? (y/n): y
+
+Nutrition by Food Group
+1. Dairy
+2. Meat
+3. Vegetables
+4. Fruit
+5. Grains
+Enter your food group choice: (1-5): 3
+Name                                Amount          Calories
+----------------------------------------------------------------------
+Asparagus                           6 spears        18
+Broccoli steamed                    1 cup           45
+Carrots                             1 cup           45
+Eggplant                            1 cup           30
+Green Beans                         1 cup           25
+Green Peas                          1 cup           66
+Lettuce                             1/4 head        14
+Mushrooms                           4               12
+Mustard greens                      1               30
+Okra                                1 1/3 cups      32
+Peppers                             1 pod           10
+Potatoes                            1 med.          100
+Squash                              1 cup           35
+Sweet potatoes                      1 med.          155
+Turnip greens                       1 cup           45
+
+Would you like to perform another conversion? (y/n): n
+
+Thanks, bye!
